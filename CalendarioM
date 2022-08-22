@@ -1,0 +1,10 @@
+let
+  DataIncial = Date.StartOfYear(List.Min("TAB"[Data])),     #TAB - Nome da tabela onde vai buscar a menos data
+  DataFinal = Date.EndOfYear(List.Max("TAB"[Data])),
+  QtdDias = Duration.Days(DataFinal-DataInicial)+1,
+  ListaDatas = List.Dates(DataInicial, QtdDias, #duration(1, 0, 0, 0))
+in
+  ListaDatas
+  
+  #converter e lista em tabela. Após isso é possível extrair com Adicionar colunas.
+  
